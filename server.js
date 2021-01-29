@@ -1,4 +1,4 @@
-require('dot-env')
+require('dot-env').confi()
 
 const express = require('express')
 
