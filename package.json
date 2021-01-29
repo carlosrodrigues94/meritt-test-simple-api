@@ -4,9 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts":{
+    "test": "echo \"Error: no test specified\" && exit 1",
     "dev":"nodemon server.js",
-    "start":"nodemon server.js",
-    "build":"nodemon server.js"
+    "start":"node server.js",
+    "build":"node server.js"
   },
   "dependencies": {
     "dot-env": "^0.0.1",
