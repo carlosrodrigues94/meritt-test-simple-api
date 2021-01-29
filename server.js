@@ -1,34 +1,33 @@
-require('dotenv').config()
+require("dotenv").config();
 
-const express = require('express')
+const express = require("express");
 
-const cors = require('cors')
+const cors = require("cors");
 
-const db = require('./db')
+const db = require("./db");
 
+const app = express();
 
-const app = express()
+app.use(cors());
 
-app.use(cors())
+app.get("/", (request, response) => {
+  response.status(200).json({ ok: true });
+});
 
-app.get('/',  (request, response) =>  {
-  response..status(200).json({ok:true})
-})
- 
-app.get('/proofs',  (request, response) =>  {
-  response.status(200).json(db.proofs)
-})
+app.get("/proofs", (request, response) => {
+  response.status(200).json(db.proofs);
+});
 
-app.get('/students',  (request, response) =>  {
-  response.status(200).json(db.students)
-})
+app.get("/students", (request, response) => {
+  response.status(200).json(db.students);
+});
 
-app.get('/favico.ico', (request, response) => {
+app.get("/favico.ico", (request, response) => {
   response.sendStatus(404);
 });
 
 const PORT = process.env.PORT || 8081;
- 
+
 app.listen(PORT, () => {
-  console.info(`Server running in port ${PORT}`)
-})
+  console.info(`Server running in port ${PORT}`);
+});
