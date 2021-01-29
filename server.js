@@ -9,7 +9,7 @@ const db = require('./db')
 
 const app = express()
 
-app.use(cors(''))
+app.use(cors())
  
 app.get('/proofs',  (request, response) =>  {
   response.status(200).json(db.proofs)
