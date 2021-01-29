@@ -6,9 +6,10 @@ const cors = require('cors')
 
 const db = require('./db')
 
-app.use(cors(''))
 
 const app = express()
+
+app.use(cors(''))
  
 app.get('/proofs',  (req, res) =>  {
   res.json(db.proofs)
