@@ -21,7 +21,9 @@ app.get('/students',  (req, res) =>  {
 app.get('/favico.ico', (req, res) => {
   res.sendStatus(404);
 });
+
+const PORT = process.env.PORT || 3000;
  
-app.listen(process.env.port || 3333, () => {
-  console.info("Server running in port 3334")
+app.listen(PORT, () => {
+  console.info(`Server running in port ${PORT}`)
 })
